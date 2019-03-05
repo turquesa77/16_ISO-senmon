@@ -1,0 +1,249 @@
+/* Scss Document */
+
+@charset "UTF-8";
+/*! ============================================
+※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
+このCSSファイルはSassから生成されていますので、
+編集しないようご注意ください。
+※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
+============================================= */
+
+
+// --------------------------------------------
+// Style Guide
+// 基本的な考えは、OOCSSベース。
+// 
+// #命名規則
+// MindBEMdingをベースに以下のルールで記載。
+// block__element--modifier
+// ※Blockが複数単語になる場合は、「blockName」のようにキャメルケースにする。
+// ※分かりやすいクラス名は略名にする。
+// ※Block, Element, Modifierは、まとめて同じ箇所に記述する。
+// --------------------------------------------
+
+
+// ============================================
+// import css
+// ============================================
+
+//reset css
+@import "_base.scss";
+// "slick" slide show
+@import '_slick.scss';
+@import '_slick-theme.scss';
+// settings
+@import '_settings.scss';
+// module
+@import '_module.scss';
+// component
+@import '_g_header_fixed.scss'; // JMA menu
+@import '_c_keyvisual.scss'; // keyVisual
+@import '_c_navi.scss'; // navi in header
+@import '_c_footer.scss'; // nav in footer
+
+
+
+// --------------------------------------------
+// Project
+// --------------------------------------------
+
+// lower ------------------------------
+.lower {
+	@include space;
+	background-color: white;
+	&--inner {
+		max-width: $width-main;
+		@include media(sp) {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+	&__photo {
+		max-width: 500px;
+		@include space;
+		margin: 0 auto 30px;
+		overflow: hidden;
+		img {
+			max-width: 500px;
+		}
+	}
+	&__btn {
+		max-width: 700px;
+		margin: 0 auto 80px;
+	}
+	&__define {
+		max-width: 700px;
+		margin: 0 auto;
+		dt {
+			clear: left;
+			float: left;
+			width: 8em;
+			background-color: $color-main;
+			color: white;
+			padding: 7px 10px;
+			@include media(sp) {
+				float: none;
+				width: 100%;
+			}
+		}
+		dd {
+			//padding-left: 10em;
+			padding: 7px 10px 7px 10em;
+			margin-bottom: 10px;
+			background-color: $color-sub2;
+			@include media(sp) {
+				padding: 7px 10px;
+			}
+		}
+	}
+	&__append {
+		max-width: 700px;
+		margin: 0 auto 80px;
+		@include font-size(14);
+	}
+	&__fig {
+		max-width: 800px;
+		margin: 0 auto 80px;
+	}
+}
+
+// JMA nav ------------------------------
+#global_link {
+	padding: 5px 10px;
+	@media screen and (max-width: 980px) {
+		display: none;
+	}
+}
+
+// nav ------------------------------
+nav {
+	background-color: $color-main;
+	box-shadow: 0px 9px 3px -3px rgba(black, 0.1);
+	position: relative; // for box-shadow
+	z-index: 2; // for box-shadow
+}
+
+// keyVisual ------------------------------
+.keyVisual {
+	margin-top: 60px;
+	@media screen and (max-width: 980px) {
+		margin-top: 45px;
+	}
+}
+
+// outline ------------------------------
+.outline {
+	@include space;
+	&--inner {
+		text-align: center;
+	}
+	&__unit {
+		display: inline-block;
+		text-align: left;
+	}
+	&__desc {
+		@include font-size(23);
+		color: $color-main;
+		font-weight: bold;
+		text-align: center;
+	}
+	&__left {
+		text-align: left;
+	}
+	&__define {
+		dt{
+			clear: left;
+			float: left;
+			width: 6em;
+			background-color: darken($color-sub1, 40%);
+			color: white;
+			padding-left: 1em;
+			@include media(sp) {
+				float: none;
+				margin-bottom: 5px;
+			}
+		}
+		dd {
+			padding-left: 10em;
+			padding-right: 1em;
+			padding-bottom: 8px;
+			margin-bottom: 10px;
+			border-bottom: 1px solid #ccc;
+			@include media(sp) {
+				padding-left: 0;
+			}
+		}
+	}
+	&__fig {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+}
+
+// btn-contact ------------------------------
+.btn-contact {
+	@include space;
+	background-color: white;
+	&--inner {
+		max-width: 700px;
+		@include media(sp) {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+}
+
+// about ------------------------------
+.about {
+	@include space-top;
+	&--inner {
+		max-width: 900px;
+	}
+}
+
+// lecturer
+.lecturer {
+	&__unit {
+		text-align: center;
+	}
+	&__name {
+		@include font-size(18);
+		color: $color-main;
+		&__l {
+			@include font-size(24);
+			font-weight: bold;
+		}
+	}
+	&__desc {
+		color: $color-type01;
+		font-weight: bold;
+		@include font-size(19);
+	}
+	&__define {
+		display: inline-block;
+		text-align: left;
+		dt {
+			clear: left;
+			float: left;
+			width: 5em;
+			background-color: $color-main;
+			color: white;
+			text-align: center;
+			@include media(sp) {
+				float: none;
+				width: 100%;
+				margin-bottom: 10px;
+			}
+		}
+		dd {
+			@include font-size(15);
+			padding-left: 7em;
+			padding-bottom: 10px;
+			margin-bottom: 15px;
+			border-bottom: 1px solid #ccc;
+			@include media(sp) {
+				padding-left: 0;
+			}
+		}
+	}
+}

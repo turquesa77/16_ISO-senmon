@@ -1,0 +1,60 @@
+/* Scss Document */
+
+// footer ------------------------------
+.footer {
+	background-color: $color-sub2;
+	color: white;
+	padding: 25px 5px 0;
+	text-align: center;
+	&__logo {
+		img {
+			max-width: 130px;
+		}
+	}
+	&__nav {
+		@include font-size(14);
+		li {
+			display: inline;
+			@include media(sp) {
+				display: block;
+				margin-bottom: 10px;
+			}
+			a {
+				color: white;
+				@include hoverOpc;
+			}
+			&:after {
+				content: "　|　";
+				@include media(sp) {
+					content: none;
+				}
+			}
+			&:last-child:after {
+				content: none;
+			}
+		}
+	}
+	&__copy {
+		@include font-size(12);
+	}
+	&__desc {
+		@include font-size(14);
+		a {
+			color: white;
+		}
+	}
+}
+
+#page-top {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	a {
+		display: block;
+		width: 70px;
+		@include hoverOpc;
+		@include media(sp) {
+			width: 45px;
+		}
+	}
+}
